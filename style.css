@@ -128,9 +128,6 @@ header .logo {
     font-size: 1.5rem;
     text-decoration: none;
     color: #fff;
-    background-color: #002fff;
-    border: solid #002fff;
-    color: #fff;
     background-color: var(--blue);
     border: solid var(--blue);
     border-radius: 20px;
@@ -226,6 +223,7 @@ header .logo {
     color: var(--white);
 }
 
+
 /* responsive-mobile */
 @media (max-width:768px) {
 
@@ -239,7 +237,7 @@ header .logo {
 
     .main .button {
         position: absolute;
-        top: 5rem;
+        top: 62vh;
         right: 30%;
     }
 
