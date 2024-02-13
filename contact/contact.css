@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --black: #333;
+  --white: #fff;
+  --blue: #002fff;
+}
+
+.dark {
+  --black: #fff;
+  --white: #333;
+  --blue: #dc143c;
+}
+
+body {
+  background-color: var(--white);
+}
+
+/* logo and menu */
+header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 100px;
+  z-index: 10000;
+}
+
+header .logo {
+  position: relative;
+  display: inline-flex;
+  color: var(--black);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+.right-side {
+  display: flex;
+}
+
+.btns {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.btns i {
+  font-size: 1.5rem;
+  color: var(--black);
+}
+
+.btns.menu-toggle i {
+  font-size: 2rem;
+}
+
+.btns i:nth-child(2) {
+  display: none;
+}
+
+.btns.active i:nth-child(2) {
+  display: block;
+}
+
+.btns.active i:nth-child(1) {
+  display: none;
+}
+
+/* sidebar navigation */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  z-index: 4;
+  transition: 0.5s;
+}
+
+.navigation.active {
+  left: 0;
+}
+
+.navigation li {
+  list-style: none;
+}
+
+.navigation li a {
+  display: inline-flex;
+  margin: 5px 0;
+  font-size: 1.35em;
+  text-decoration: none;
+  color: var(--black);
+  padding: 5px 20px;
+  border-radius: 40px;
+  transition: 0.3s;
+}
+
+.navigation li a:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* end of navigation */
+
+
+
+/* page content */
+.main {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+}
+
+h1 {
+  text-align: center;
+  color: var(--blue);
+}
+
+.contact-img {
+  border-radius: 20% 30%;
+}
+
+#contact-list {
+text-align: center;
+background-color: var(--white);
+padding: 1rem;
+padding-left: 0rem;
+}
+
+#contact-list ul li {
+list-style-type: none;
+font-size: 1.4rem;
+  color: var(--black);
+}
+
+#contact-list ul li:after {
+  content: ' ✓';
+  color: goldenrod;
+}
+
+/* links in the contact list */
+#contact-list li a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+#contact-list li a:hover {
+  color: goldenrod;
+}
+
+/* border on the list */
+#contact-list {
+  position: relative;
+  padding: 1rem;
+}
+
+#contact-list:before, #contact-list:after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+#contact-list:before {
+  /* top-left border */
+  top: 0;
+  left:0;
+  right: 60%;
+  bottom: 80%;
+  border-top: 4px solid var(--blue);
+  border-left: 4px solid var(--blue);
+}
+
+#contact-list:after {
+  /* top-right border */
+  top: 80%;
+  left: 60%;
+  right: 0;
+  bottom: 0;
+  border-bottom: 4px solid var(--blue);
+  border-right: 4px solid var(--blue);
+}
+/* end of borders */
+
+
+.button {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--blue);
+  border: solid var(--blue);
+  border-radius: 15px;
+  padding: 0.7rem;
+  text-transform: capitalize;
+  transition: 0.5s;
+}
+
+.button:hover {
+  color: var(--blue);
+  background-color: #fff;
+}
+
+/* footer */
+footer {
+  margin-top: 1.2rem;
+  padding-bottom: 2rem;
+}
+
+.copyright {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--black);
+  margin-bottom: 0;
+}
+
+.social {
+  font-size: 1.5rem;
+}
+
+.social a {
+  text-decoration: none;
+  color: var(--black);
+  margin-right: 20px;
+}
+
+.social .fa-facebook:hover {
+  color: #1515e2;
+}
+
+.social .fa-instagram:hover {
+  color: orangered;
+}
+
+.social .fa-youtube:hover {
+  color: crimson;
+}
+
+/* responsive-mobile */
+@media (max-width: 768px) {
+  header {
+    padding: 20px;
+  }
+
+  /* distance from the top */
+  .main h1 {
+    margin-top: 5rem;
+  }
+
+  .copyright {
+    font-size: 1rem;
+  }
+
+  /* logo, button-theme and menu be more visible while scrolling */
+  header i,
+  header .logo {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: var(--white);
+  }
+
+  #contact-list {
+    margin-top: 2rem;
+  }
+}

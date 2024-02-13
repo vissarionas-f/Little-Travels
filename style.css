@@ -14,7 +14,7 @@
 .dark {
     --black: #fff;
     --white: #333;
-    --blue: #333;
+    --blue: #dc143c;
 }
 
 /* logo and menu */
@@ -60,7 +60,7 @@ header .logo {
 }
 
 .btns.menu-toggle i {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .btns i:nth-child(2) {
@@ -73,6 +73,46 @@ header .logo {
 
 .btns.active i:nth-child(1) {
     display: none;
+}
+
+/* sidebar navigation */
+.navigation {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    z-index: 4;
+    transition: 0.5s;
+}
+
+.navigation.active {
+    left: 0;
+}
+
+.navigation li {
+    list-style: none;
+}
+
+.navigation li a {
+    display: inline-flex;
+    margin:  5px 0;
+    font-size: 1.35em;
+    text-decoration: none;
+    color: var(--black);
+    padding: 5px 20px;
+    border-radius: 40px;
+    transition: 0.3s;
+}
+
+.navigation li a:hover {
+    background-color: var(--black);
+    color: var(--white);
 }
 
 
@@ -130,8 +170,9 @@ header .logo {
     color: #fff;
     background-color: var(--blue);
     border: solid var(--blue);
-    border-radius: 20px;
-    padding: 0.4rem;
+    /* border-radius: 15px; */
+    padding: 0.7rem;
+    border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
     text-transform: capitalize;
     transition: 0.5s;
 }
@@ -181,46 +222,6 @@ header .logo {
 
 .social .fa-youtube:hover {
     color: crimson;
-}
-
-/* sidebar navigation */
-.navigation {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--white);
-    z-index: 4;
-    transition: 0.5s;
-}
-
-.navigation.active {
-    left: 0;
-}
-
-.navigation li {
-    list-style: none;
-}
-
-.navigation li a {
-    display: inline-flex;
-    margin:  5px 0;
-    font-size: 1.35em;
-    text-decoration: none;
-    color: var(--black);
-    padding: 5px 20px;
-    border-radius: 40px;
-    transition: 0.3s;
-}
-
-.navigation li a:hover {
-    background-color: var(--black);
-    color: var(--white);
 }
 
 
